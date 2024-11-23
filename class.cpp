@@ -1,21 +1,22 @@
 
-#include <iostream>
-using namespace std;
-class TextBox {
-public: 
-	void setValue(string value) {
-	 this->value=value;
-	}
-	string getValue() {
-		return value;
-	}
-private:
-	string value;
-};
+#include "class.hpp" 
 
-int main() {
-	TextBox myValue;
-	myValue.setValue("hi ");
-	cout << myValue.getValue();
+using namespace std; 
+
+TextBox::TextBox() {
+    value = "";  // initialize value with an empty string
 }
 
+TextBox::TextBox(string initialValue) {
+    value = initialValue;  // Initialize value with the given string
+}
+
+// Set value function
+void TextBox::setValue(string newValue) {
+    value = newValue;
+}
+
+// Get value function
+string TextBox::getValue() const {
+    return value;
+}
